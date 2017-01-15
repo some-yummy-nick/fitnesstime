@@ -1,0 +1,167 @@
+.footer {
+  background: #202020;
+  color: #fff;
+  font-weight: 300;
+  font-family: 'Open Sans';
+  &__title {
+    text-transform: uppercase;
+    &--bottom {
+      margin-bottom: 0;
+    }
+  }
+  &__smartphone,
+  &__envelope {
+    width: 12px;
+    height: 12px;
+    fill: #fff;
+  }
+  &__copyright{
+    padding-bottom: 30px;
+  }
+}
+
+.footer__top {
+  @include clearfix;
+  height: 100px;
+  &:after {
+    content: '';
+    display: block;
+    width: auto;
+    height: 1px;
+    background-color: #323232;
+  }
+}
+
+.footer__top-left {
+  position: relative;
+  float: left;
+  max-width: 620px;
+  padding-left: 50px;
+  svg {
+    position: absolute;
+    top: 20px;
+    fill: #fff;
+    left: 0;
+    width: 24px;
+    height: 20px;
+  }
+  span {
+    color: #717171;
+  }
+}
+
+.social-contacts {
+  float: right;
+  padding-top: 30px;
+  ul{
+    @include noList;
+  }
+  li{
+    @include inlineBlock();
+    margin-right: 15px;
+  }
+  svg{
+    width: 15px;
+    height: 15px;
+    fill: #fff;
+  }
+}
+
+.footer__bottom {
+  @include clearfix;
+  background: url(../images/world-map.png) no-repeat 50%;
+  background-size: cover;
+  min-height: 324px;
+  color: #c6c6c6;
+  margin-bottom: 30px;
+}
+.footer__bottom-left{
+  max-width: 370px;
+  float: left;
+}
+.footer__bottom-right{
+  float: right;
+}
+
+.padding-none {
+  padding: 0;
+}
+
+form {
+  position: relative;
+  input {
+    @include inlineBlock();
+    width: 212px;
+    height: 36px;
+    opacity: 0.5;
+    padding-left: 15px;
+    margin-right: 10px;
+    margin-top: 15px;
+    background-color: #202020;
+    border: 1px solid #7d7d7d;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  textarea {
+    display: block;
+    width: 212px;
+    height: 111px;
+    opacity: 0.5;
+    margin-top: 20px;
+    padding-left: 15px;
+    background-color: #202020;
+    border: 1px solid #7d7d7d;
+    @media($tablet-widths) {
+      width: 340px;
+     }
+    @media($desktop-widths) {
+      width: 440px;
+     }
+  }
+  button {
+    width: 212px;
+    margin-top: 20px;
+    background-color: #e25050;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    font-family: "Oswald";
+    padding-left: 20px;
+    cursor: pointer;
+    svg {
+      width: 13px;
+      height: 13px;
+      fill: #fff;
+      margin-left: 15px;
+    }
+  }
+  p {
+    margin-right: 60px;
+    color: #707070;
+    font-family: 'OpenSans';
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 21px;
+  }
+  @media($mobile-widths-only) {
+    padding-bottom: 100px;
+  }
+}
+
+.button-block {
+  position: absolute;
+  right: 2px;
+  margin-left: 15px;
+  top: 51px;
+  @media($mobile-widths-only) {
+    top: 235px;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}

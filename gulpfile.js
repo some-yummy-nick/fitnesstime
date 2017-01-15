@@ -20,6 +20,7 @@ sync = require('browser-sync').create(),
   cache = require('gulp-cache'),
   svgmin = require('gulp-svgmin'),
   svgstore = require('gulp-svgstore'),
+  path = require('path'),
   ghPages = require('gulp-gh-pages');
 
 
@@ -39,7 +40,6 @@ let processors = [
     })
   ],
   assets = [
-    'src/libraries{,/**}',
     'src/images{,/favicon/**}',
     '!src/html{,/**}',
     '!src/styles{,/**}',
@@ -152,5 +152,5 @@ gulp.task('build', () => {
   runSequence('clean', ['copy', 'images', 'styles'], 'html');
 });
 gulp.task('default', () => {
-  runSequence('clean', ['copy', 'images', 'styles'], 'html', 'server', 'watch');
+  runSequence(['copy', 'images', 'styles'], 'html', 'server', 'watch');
 });

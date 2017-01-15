@@ -2,7 +2,6 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 const path = require('path');
 module.exports = {
-
   entry: {
     index: path.resolve('./src/scripts/index.js')
   },

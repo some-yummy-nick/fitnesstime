@@ -1,0 +1,33 @@
+.gallery {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  &__items{
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    margin-bottom: 30px;
+    img {
+      margin: auto;
+    }
+  }
+  h1 {
+    font: 700 24px / 21px 'Oswald';
+    color: #202020;
+    text-transform: uppercase;
+  }
+  p {
+    color: #777777;
+    font: 400 12px / 21px 'Open Sans';
+    max-width: 524px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  @media($mobile-widths-only) {
+    &__items{
+      justify-content: center;
+    }
+  }
+}

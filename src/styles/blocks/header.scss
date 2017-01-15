@@ -1,3 +1,137 @@
-h1 {
-  background: rebeccapurple;
+.header {
+  color: #fefefe;
+  min-height: 100px;
+  background-color: #202020;
+}
+
+.menu {
+  padding-top: 28px;
+  &__list {
+    @include noList;
+    text-align: center;
+    &--hide {
+      display: none;
+    }
+  }
+  &__item {
+    display: block;
+    padding: 15px;
+  }
+  &__link {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+      background-color: $accentColor;
+    }
+  }
+  &__toggle {
+    position: absolute;
+    display: block;
+    top: 30px;
+    height: 20px;
+    width: 34px;
+    right: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    span {
+      position: absolute;
+      display: block;
+      color: #fff;
+      top: 0;
+      left: 0;
+      margin-left: 2px;
+      margin-top: 10px;
+      width: 34px;
+      height: 2px;
+      background-color: currentColor;
+      &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 34px;
+        height: 2px;
+        background-color: currentColor;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 34px;
+        height: 2px;
+        background-color: currentColor;
+      }
+    }
+    &--close {
+      span {
+        margin-top: 0;
+        margin-left: 0;
+        width: 42px;
+        height: 42px;
+        background: transparent;
+        &::before {
+          top: 10px;
+
+          width: 42px;
+          height: 2px;
+          transform: rotate(-45deg);
+        }
+        &::after {
+
+          top: 10px;
+          width: 42px;
+          height: 2px;
+          transform: rotate(45deg);
+        }
+      }
+
+    }
+  }
+
+  @media ($tablet-widths) {
+    &__list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__toggle {
+      display: none;
+    }
+    &--hide-block {
+      display: block;
+    }
+  }
+}
+
+.logo {
+  float: left;
+  display: block;
+  font: 700 24px "Raleway";
+  width: 139px;
+  margin-top: 40px;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+}
+
+@media ($mobile-widths-only) {
+.logo{
+  margin-top: 30px;
+  position: absolute;
+  left: 50%;
+    transform: translateX(-50%);
+}
+  .menu{
+    padding-top: 80px;
+  }
 }
