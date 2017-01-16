@@ -1,10 +1,11 @@
 {
   "name": "fitnesssTime",
   "scripts": {
-    "build": "set NODE_ENV=production&&npm run dest&&npm run webpack",
+    "build": "parallelshell \"npm run dest\" \"npm run webpack-build\"",
     "start": "parallelshell \"npm run gulp\" \"npm run webpack\"",
     "webpack": "webpack",
-    "dest": "gulp build",
+    "webpack-build": "set NODE_ENV=production&&npm run webpack",
+    "dest": "set NODE_ENV=production&gulp build",
     "gulp": "gulp"
   },
   "devDependencies": {
@@ -40,7 +41,7 @@
     "parallelshell": "^2.0.0",
     "path": "^0.12.7",
     "postcss-easysprites": "^0.1.7",
-    "postcss-sorting": "^1.7.0",
+    "postcss-sorting": "^2.0.1",
     "run-sequence": "^1.2.2",
     "webpack": "^1.14.0",
     "wiredep": "^4.0.0"

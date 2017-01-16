@@ -40,6 +40,8 @@ let processors = [
     })
   ],
   assets = [
+    'src/libraries{,/owl-carousel/**}',
+    'src/libraries{,/lory/**}',
     'src/images{,/favicon/**}',
     '!src/html{,/**}',
     '!src/styles{,/**}',
