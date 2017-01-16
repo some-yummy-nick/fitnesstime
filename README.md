@@ -1,3 +1,5 @@
+https://yeffasol.github.io/fitnesstime/
+
 npm i
 
 bower i
